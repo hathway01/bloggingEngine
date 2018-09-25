@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Welcome to your blog desk</h1>
+<p>write something amazing today :)</p>
+
+  {% for message in form.title.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  {% for message in form.content.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  <form action="{{ url_for('post') }}" method=post class="big-from">
+    {{ form.hidden_tag() }}
+          {{ form.title.label }}
+          {{ form.title }}
+          {{ form.content.label }}
+          {{ form.content }}
+     <p>{{ form.submit }}</p>
+
+  </form>
+
+{% endblock %}

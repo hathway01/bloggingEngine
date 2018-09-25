@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="card error">
+    <h1>Some Internal Error Occured</h1>
+    <p>Sorry some internal error occured at our side. We apologize for inconvenience</p>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+</div>
+{%endblock%}

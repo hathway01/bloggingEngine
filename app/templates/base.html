@@ -1,0 +1,45 @@
+<html>
+  <head>
+      <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }} - Zibu </title>
+    {% else %}
+    <title>Zibu</title>
+    {% endif %}
+      <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="head">
+        <span class="nav-left">
+            <div class="title">
+                <h1>Zibu</h1>
+                <span id='tagline'>&nbspwhere blogs heal the minds...</span>
+            </div>
+        </span>
+        <span>
+            <form action="/index">
+                <input type="text" placeholder="Search blogs">
+                <button class="btn simple" type="submit" value="submit">Submit</button>
+            </form>
+
+        </span>
+        <span class="nav-right">
+            <a href="/index">Home</a>
+            <a href="/about">About</a>
+            {% if name %}
+                <a href="/mypost">My Posts</a>
+            <span class="current-user"> logged in as <span class="username" >{{name}}</span> </span><a href="/logout">Logout</a>
+            {% else %}
+              <a href="/register">Register</a>
+              <a href="/login" class="btn primary">Login</a>
+            {% endif %}
+        </span>
+
+    </header>
+    <hr>
+    {% block content %}{% endblock %}
+    <footer class="footer">
+            © Zibu.com 2018
+    </footer>
+  </body>
+</html>

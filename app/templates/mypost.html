@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="sub-head">
+<h1>Your blogs</h1>
+<a href="/post" class="btn primary">create new blog</a>
+</div>
+<div class="blogs-container">
+    {% for post in myposts %}
+        <div class="blog-container">
+            <div class ='head'><span class="nav-right">{{post.title}}</span> <span class="nav-right"><span class="btn simple"><a href="/update/{{post.id}}">Update</a></span> <span class="btn danger"><a href="/delete/{{post.id}}">Delete</a> </span></span></div>
+            <div class = 'blog-description'>Author: {{post.author}} | Posted On: {{post.timestamp}}</div><hr>
+            <div class = 'content'>{{post.body}}</div>
+        </div>
+    {% endfor%}
+    </div>
+{% endblock %}
