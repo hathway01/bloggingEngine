@@ -25,6 +25,16 @@ class RegisterForm(Form):
         else:
             return True
 
+class SearchForm(Form):
+    text = StringField("text",[validators.length(min=1)])
+    submit = SubmitField("Search")
+
+    def validate(self):
+        if not Form.validate(self):
+            return False
+        else:
+            True
+
 
 class LoginForm(Form):
     email = StringField('Email Address', [validators.Length(min=6, max=35)])

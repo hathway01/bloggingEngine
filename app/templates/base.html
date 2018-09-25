@@ -16,12 +16,11 @@
                 <span id='tagline'>&nbspwhere blogs heal the minds...</span>
             </div>
         </span>
-        <span>
-            <form action="/index">
-                <input type="text" placeholder="Search blogs">
-                <button class="btn simple" type="submit" value="submit">Submit</button>
+        <span class="search">
+            <form action="/search" method="POST">
+                {{searchform.text}}
+                <p>{{ searchform.submit }}</p>
             </form>
-
         </span>
         <span class="nav-right">
             <a href="/index">Home</a>

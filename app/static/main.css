@@ -70,7 +70,7 @@ header{
     font-size: large;
 }
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     margin:0px 40%;
     min-width: 200px;
@@ -145,12 +145,18 @@ form label {
     border:2px solid red;
 }
 
+#search-form{
+    display:flex;
+    justify-content: right;
+    align-items: center;
+}
+
 @media only screen and (max-width: 640px){
     .head {
-    display: flex;
+        display: flex;
         flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
+        justify-content: space-between;
+        align-items: baseline;
     }
     .current-user{
         display: none;
@@ -162,6 +168,9 @@ form label {
     }
     form{
         width: 100%;
+    }
+    #search-form{
+        margin: 0px auto;
     }
     
 }
